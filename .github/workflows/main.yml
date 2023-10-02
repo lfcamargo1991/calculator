@@ -20,6 +20,9 @@ jobs:
 
       - name: Build e Tag da Imagem Docker
         run: |
+          ls
+          cd ..
+          ls
           docker build -t calculadora-node .
           docker tag calculadora-node:latest docker.io/lfcamargo/calculadora-node:latest
 
