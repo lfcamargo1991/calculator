@@ -21,8 +21,6 @@ jobs:
       - name: Build e Tag da Imagem Docker
         run: |
           ls
-          cd ..
-          ls
           docker build -t calculadora-node .
           docker tag calculadora-node:latest docker.io/lfcamargo/calculadora-node:latest
 
@@ -33,5 +31,5 @@ jobs:
         run: docker stop calculadora-node || true && docker rm calculadora-node || true
 
       - name: Iniciar um Novo Container
-        run: docker run -d -p 80:80 --name calculadora-node docker.io/lfcamargo/calculadora-node:latest
+        run: docker run -d -p 3000:3000 --name calculadora-node docker.io/lfcamargo/calculadora-node:latest
     
