@@ -25,7 +25,7 @@ jobs:
           docker tag calculadora-node:latest docker.io/lfcamargo/calculadora-node:latest
 
       - name: Push da Imagem Docker
-        run: docker push docker.io/lfcamargo/calculadora-noder:latest
+        run: docker push docker.io/lfcamargo/calculadora-node:latest
 
       - name: Parar e Remover o Container Anterior
         run: docker stop calculadora-node || true && docker rm calculadora-node || true
