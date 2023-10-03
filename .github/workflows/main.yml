@@ -21,6 +21,10 @@ jobs:
       - name: Build e Tag da Imagem Docker
         run: |
            docker build -t calculadora-node .
+           docker tag calculadora-node:latest docker.io/lfcamargo/calculadora-node:latest
+      
+      - name: Push da Imagem Docker
+        run: docker push docker.io/lfcamargo/calculadora-node:latest
 
       - name: SonarQube Scan
         run: docker run -e SONAR_HOST_URL=http://host.docker.internal:9000 -e SONAR_LOGIN=sqp_6cef8b1e52fd57e67f855b1255c1f0a3b715151d -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli
