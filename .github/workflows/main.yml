@@ -17,7 +17,7 @@ jobs:
            docker build -t calculadora-node .
 
       - name: SonarQube Scan
-        run: docker run -e SONAR_HOST_URL=http://host.docker.internal:9000 -e SONAR_LOGIN=sqp_e47b8ab61b4d98742a32b532f4d6d22e6128e527 -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli
+        run: docker run -e SONAR_HOST_URL=http://host.docker.internal:9000 -e SONAR_LOGIN=sqp_6cef8b1e52fd57e67f855b1255c1f0a3b715151d -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli
 
       - name: Parar e Remover o Container Anterior
         run:  | 
