@@ -29,7 +29,7 @@ jobs:
       #  run: docker push docker.io/lfcamargo/calculadora-node:latest
 
       - name: Parar e Remover o Container Anterior
-        run: docker stop calculadora-node || true && docker rm calculadora-node || true
+        run: docker stop calculadora-node ; docker rm calculadora-node
 
       - name: Iniciar um Novo Container
       #  run: docker run -d -p 3000:3000 --name calculadora-node docker.io/lfcamargo/calculadora-node:latest
