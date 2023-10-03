@@ -16,3 +16,22 @@ To build, simply:
 1. Runs `npm install` to install dependencies.
 2. Runs `npm test` to run Mocha and execute the unit tests.
 
+
+
+================================================
+GitRunner Windows x64
+Configure
+Download
+We recommend configuring the runner under "\actions-runner". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.
+
+# Create a folder under the drive root
+$ mkdir actions-runner; cd actions-runner# Download the latest runner package
+$ Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.309.0/actions-runner-win-x64-2.309.0.zip -OutFile actions-runner-win-x64-2.309.0.zip# Optional: Validate the hash
+$ if((Get-FileHash -Path actions-runner-win-x64-2.309.0.zip -Algorithm SHA256).Hash.ToUpper() -ne 'cd1920154e365689130aa1f90258e0da47faecce547d0374475cdd2554dbf09a'.ToUpper()){ throw 'Computed checksum did not match' }# Extract the installer
+$ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.309.0.zip", "$PWD")
+# Create the runner and start the configuration experience
+$ ./config.cmd --url https://github.com/lfcamargo1991/calculator --token ATFBPLKK7H3HEZDKBSRA4ITFDNVCC# Run it!
+$ ./run.cmd
+Using your self-hosted runner
+# Use this YAML in your workflow file for each job
+runs-on: self-hosted
