@@ -6,7 +6,7 @@ on:
       - master
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: AVKNHTEMS649012
 
     steps:
       - name: Checkout do Código
