@@ -115,3 +115,19 @@
 [2023-10-03 00:20:38Z INFO Terminal] WRITE LINE: Current runner version: '2.309.0'
 [2023-10-03 00:20:38Z INFO Terminal] WRITE LINE: 2023-10-03 00:20:38Z: Listening for Jobs
 [2023-10-03 00:20:38Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2023-10-03 00:33:11Z INFO Terminal] WRITE LINE: Exiting...
+[2023-10-03 00:33:11Z INFO ConfigurationStore] IsServiceConfigured()
+[2023-10-03 00:33:11Z INFO ConfigurationStore] IsServiceConfigured: False
+[2023-10-03 00:33:11Z INFO HostContext] Runner will be shutdown for UserCancelled
+[2023-10-03 00:33:11Z WARN GitHubActionsService] GET request to https://pipelinesghubeus10.actions.githubusercontent.com/lCMzCfU8wnkol9gLQbGJOe8vnWGJtsQvV8mbbxUw7Rj1BhbN1l/_apis/distributedtask/pools/1/messages?sessionId=031ffff4-abea-44ec-914c-3cf12e3c6169&status=Online&runnerVersion=2.309.0 has been cancelled.
+[2023-10-03 00:33:11Z INFO MessageListener] Get next message has been cancelled.
+[2023-10-03 00:33:11Z INFO JobDispatcher] Shutting down JobDispatcher. Make sure all WorkerDispatcher has finished.
+[2023-10-03 00:33:11Z INFO Terminal] WRITE LINE: Exiting...
+[2023-10-03 00:33:11Z INFO ConfigurationStore] IsServiceConfigured()
+[2023-10-03 00:33:11Z INFO ConfigurationStore] IsServiceConfigured: False
+[2023-10-03 00:33:11Z INFO HostContext] Runner will be shutdown for UserCancelled
+[2023-10-03 00:33:11Z INFO Terminal] WRITE LINE: Exiting...
+[2023-10-03 00:33:11Z INFO ConfigurationStore] IsServiceConfigured()
+[2023-10-03 00:33:11Z INFO ConfigurationStore] IsServiceConfigured: False
+[2023-10-03 00:33:11Z INFO HostContext] Runner will be shutdown for UserCancelled
+[2023-10-03 00:33:11Z INFO Listener] Runner execution been cancelled.

@@ -1,9 +1,9 @@
 ﻿{
-  "agentId": 2,
-  "agentName": "RunnerGitLab",
+  "agentId": 23,
+  "agentName": "AVKNHTEMS649012",
   "poolId": 1,
   "poolName": "Default",
   "serverUrl": "https://pipelinesghubeus10.actions.githubusercontent.com/lCMzCfU8wnkol9gLQbGJOe8vnWGJtsQvV8mbbxUw7Rj1BhbN1l/",
   "gitHubUrl": "https://github.com/lfcamargo1991/calculator",
-  "workFolder": "./run.cmd"
+  "workFolder": "_work"
 }
