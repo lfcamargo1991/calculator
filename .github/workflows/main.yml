@@ -21,15 +21,20 @@ jobs:
 
       - name: Build e Tag da Imagem Docker
         run: |
-          whoami
-          docker build -t calculadora-node .
+           docker build -t calculadora-node .
         #  docker tag calculadora-node:latest docker.io/lfcamargo/calculadora-node:latest
 
       #- name: Push da Imagem Docker
       #  run: docker push docker.io/lfcamargo/calculadora-node:latest
 
       - name: Parar e Remover o Container Anterior
-        run: docker stop calculadora-node ; docker rm calculadora-node
+        run:  | 
+           if (docker ps -a | Where-Object { $_ -match 'calculadora-node' }) {
+             docker stop calculadora-node
+             docker rm calculadora-node
+           } else {
+             Write-Host "Aplicação Calculadora não está ativa."
+           }
 
       - name: Iniciar um Novo Container
       #  run: docker run -d -p 3000:3000 --name calculadora-node docker.io/lfcamargo/calculadora-node:latest
