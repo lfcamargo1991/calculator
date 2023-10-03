@@ -6,7 +6,7 @@ on:
       - master
 jobs:
   deploy:
-    runs-on: AVKNHTEMS649012
+    runs-on: [self-hosted, linux, ARM64]
 
     steps:
       - name: Checkout do Código

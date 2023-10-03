@@ -29,10 +29,12 @@ $ mkdir actions-runner; cd actions-runner# Download the latest runner package
 $ Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.309.0/actions-runner-win-x64-2.309.0.zip -OutFile actions-runner-win-x64-2.309.0.zip# Optional: Validate the hash
 $ if((Get-FileHash -Path actions-runner-win-x64-2.309.0.zip -Algorithm SHA256).Hash.ToUpper() -ne 'cd1920154e365689130aa1f90258e0da47faecce547d0374475cdd2554dbf09a'.ToUpper()){ throw 'Computed checksum did not match' }# Extract the installer
 $ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.309.0.zip", "$PWD")
+
 # Create the runner and start the configuration experience
-$ ./config.cmd --url https://github.com/lfcamargo1991/calculator --token ATFBPLKK7H3HEZDKBSRA4ITFDNVCC# Run it!
+$ ./config.cmd --url https://github.com/lfcamargo1991/calculator --token ATFBPLKK7H3HEZDKBSRA4ITFDNVCC# Run it!  # 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
 $ ./run.cmd
 Using your self-hosted runner
+
 # Use this YAML in your workflow file for each job
 runs-on: self-hosted
 .
