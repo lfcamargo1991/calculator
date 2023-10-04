@@ -36,7 +36,7 @@ jobs:
            #docker run --rm -v $DESTINO/:/myapp aquasec/trivy fs --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_fs.html /myapp
            echo $DESTINO
            ls 
-           ls /myapp
+           
         env:
           DESTINO: C:\GIT\meuGITHUB\calculator 
       #- name: TrivyScan - Repositorio
