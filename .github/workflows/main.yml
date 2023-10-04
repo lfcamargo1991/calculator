@@ -19,15 +19,15 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build e Tag da Imagem Docker
-        run: |
+        #run: |
            #docker build -t calculadora-node .
            #docker tag calculadora-node:latest docker.io/lfcamargo/calculadora-node:latest
       
       - name: Push da Imagem Docker
-        run: #docker push docker.io/lfcamargo/calculadora-node:latest
+        #run: docker push docker.io/lfcamargo/calculadora-node:latest
 
       - name: SonarQube Scan
-        run: #docker run -e SONAR_HOST_URL=http://host.docker.internal:9000 -e SONAR_LOGIN=sqp_6cef8b1e52fd57e67f855b1255c1f0a3b715151d -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli
+        #run: docker run -e SONAR_HOST_URL=http://host.docker.internal:9000 -e SONAR_LOGIN=sqp_6cef8b1e52fd57e67f855b1255c1f0a3b715151d -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli
       
       - name: TrivyScan 
         run: | 
@@ -40,7 +40,7 @@ jobs:
         env:
           DESTINO: C:\GIT\meuGITHUB\calculator 
       - name: TrivyScan - Repositorio
-        run: #docker run --rm -v $PWD/:/myapp aquasec/trivy repo --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_repo.html https://github.com/lfcamargo1991/calculator.git
+        #run: docker run --rm -v $PWD/:/myapp aquasec/trivy repo --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_repo.html https://github.com/lfcamargo1991/calculator.git
         
       - name: Parar e Remover o Container Anterior
         run:  | 
