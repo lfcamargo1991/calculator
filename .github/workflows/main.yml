@@ -29,16 +29,16 @@ jobs:
       - name: SonarQube Scan
         run: docker run -e SONAR_HOST_URL=http://host.docker.internal:9000 -e SONAR_LOGIN=sqp_6cef8b1e52fd57e67f855b1255c1f0a3b715151d -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli
       
-        - name: TrivyScan - IMAGE 
+      - name: TrivyScan - IMAGE 
         run: docker run --rm -v $PWD/:/myapp aquasec/trivy image --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_image.html --severity HIGH,CRITICAL lfcamargo/calculadora-node:latest
 
-        - name: TrivyScan - CONFIGs Projeto
+      - name: TrivyScan - CONFIGs Projeto
         run: docker run --rm -v $PWD/:/myapp aquasec/trivy config --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_config.html /myapp
 
-        #- name: TrivyScan - Repositorio
-        #run: docker run --rm -v $PWD/:/myapp aquasec/trivy repo --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_repo.html https://github.com/lfcamargo1991/calculator.git
+      #- name: TrivyScan - Repositorio
+      #  run: docker run --rm -v $PWD/:/myapp aquasec/trivy repo --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_repo.html https://github.com/lfcamargo1991/calculator.git
 
-        - name: TrivyScan - FileSystem
+      - name: TrivyScan - FileSystem
         run: docker run --rm -v $PWD/:/myapp aquasec/trivy fs --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_fs.html /myapp
         
       - name: Parar e Remover o Container Anterior
