@@ -31,7 +31,7 @@ jobs:
       
       - name: TrivyScan 
         run: | 
-           #docker run --rm -v $DESTINO\:/myapp aquasec/trivy image --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_image.html --severity HIGH,CRITICAL lfcamargo/calculadora-node:latest
+           docker run --rm -v $DESTINO\:/myapp aquasec/trivy image --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_image.html --severity HIGH,CRITICAL lfcamargo/calculadora-node:latest
            #docker run --rm -v $DESTINO\:/myapp aquasec/trivy config --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_config.html /myapp
            #docker run --rm -v $DESTINO\:/myapp aquasec/trivy fs --format template --template "@/myapp/html.tpl" -o /myapp/relatorios_trivy/scan_fs.html /myapp
            ls $DESTINO
